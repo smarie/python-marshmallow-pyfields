@@ -1,6 +1,6 @@
 # marshmallow-pyfields
 
-*Automatic generation of marshmallow schemas from classes using `pyfields`.*
+*Automatic generation of `marshmallow` schemas from classes using `pyfields`.*
 
 [![Python versions](https://img.shields.io/pypi/pyversions/marshmallow-pyfields.svg)](https://pypi.python.org/pypi/marshmallow-pyfields/) [![Build Status](https://travis-ci.org/smarie/python-marshmallow-pyfields.svg?branch=master)](https://travis-ci.org/smarie/python-marshmallow-pyfields) [![Tests Status](https://smarie.github.io/python-marshmallow-pyfields/junit/junit-badge.svg?dummy=8484744)](https://smarie.github.io/python-marshmallow-pyfields/junit/report.html) [![codecov](https://codecov.io/gh/smarie/python-marshmallow-pyfields/branch/master/graph/badge.svg)](https://codecov.io/gh/smarie/python-marshmallow-pyfields)
 

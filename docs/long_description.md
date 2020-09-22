@@ -4,7 +4,7 @@
 
 [![Documentation](https://img.shields.io/badge/doc-latest-blue.svg)](https://smarie.github.io/python-marshmallow-pyfields/) [![PyPI](https://img.shields.io/pypi/v/marshmallow-pyfields.svg)](https://pypi.python.org/pypi/marshmallow-pyfields/) [![Downloads](https://pepy.tech/badge/marshmallow-pyfields)](https://pepy.tech/project/marshmallow-pyfields) [![Downloads per week](https://pepy.tech/badge/marshmallow-pyfields/week)](https://pepy.tech/project/marshmallow-pyfields) [![GitHub stars](https://img.shields.io/github/stars/smarie/python-marshmallow-pyfields.svg)](https://github.com/smarie/python-marshmallow-pyfields/stargazers)
 
-Automatic generation of marshmallow schemas from classes using `pyfields`.
+Automatic generation of `marshmallow` schemas from classes using `pyfields`.
 
 The documentation for users is available here: [https://smarie.github.io/python-marshmallow-pyfields/](https://smarie.github.io/python-marshmallow-pyfields/)
 
