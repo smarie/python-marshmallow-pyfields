@@ -3,6 +3,7 @@ pytest-runner
 setuptools_scm
 
 # -- to install
+pyfields
 marshmallow$MARSHMALLOW_VERSION  # for build-specific version spec
 
 # --- to generate the reports (see scripts in ci_tools, called by .travis)
