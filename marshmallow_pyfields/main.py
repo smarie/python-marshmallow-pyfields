@@ -2,7 +2,7 @@
 #           + All contributors to <https://github.com/smarie/python-marshmallow-pyfields>
 #
 #  License: 3-clause BSD, <https://github.com/smarie/python-marshmallow-pyfields/blob/master/LICENSE>
-
+import inspect
 from functools import lru_cache
 from typing import (
     Optional,
@@ -56,7 +56,7 @@ def _possibly_cached_class_schema(
     # Copy all marshmallow hooks and whitelisted members of the dataclass to the schema.
     attributes = {
         k: v
-        for k, v in vars(clazz).items()  # inspect.getmembers(clazz)
+        for k, v in inspect.getmembers(clazz)
         if hasattr(v, "__marshmallow_hook__") or k in MEMBERS_WHITELIST
     }
 
@@ -65,10 +65,10 @@ def _possibly_cached_class_schema(
         (
             field.name,
             field_for_schema(
-                field.type_hint,
-                marshmallow.missing if field.is_mandatory else field.default,
-                None,  # field.metadata,
-                base_schema
+                typ=field.type_hint,
+                default=marshmallow.missing if field.is_mandatory else get_default(field),
+                metadata=None,  # field.metadata,
+                base_schema=base_schema
             ),
         )
         for field in fields
@@ -77,3 +77,11 @@ def _possibly_cached_class_schema(
 
     schema_class = type(clazz.__name__, (_base_schema(clazz, base_schema),), attributes)
     return cast(Type[marshmallow.Schema], schema_class)
+
+
+def get_default(field):
+    """Returns the default value to pass to the marshmallow schema"""
+    try:
+        return field.default.get_copied_value()
+    except AttributeError:
+        return field.default
